@@ -146,6 +146,13 @@ public class ClearEditText extends EditText implements
     	translateAnimation.setDuration(1000);
     	return translateAnimation;
     }
- 
- 
+
+    public void Animation(View view){
+        //ViewPropertyAnimator.animate(view).rotationBy(360).setDuration(1000).setInterpolator(new OvershootInterpolator()); //todo 在1603自定义可以的
+
+       /* ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(view, "translationX", 15);
+        objectAnimator.setInterpolator(new CycleInterpolator(2));
+        objectAnimator.setDuration(500);
+        objectAnimator.start();*/
+    }
 }

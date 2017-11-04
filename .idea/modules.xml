@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/clearEditTextmaster/clearEditTextmaster.iml" filepath="$PROJECT_DIR$/clearEditTextmaster/clearEditTextmaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/clearEditTextmaster/clearEditTextmaster.iml" filepath="$PROJECT_DIR$/clearEditTextmaster/clearEditTextmaster.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shakeText.iml" filepath="$PROJECT_DIR$/shakeText.iml" />
       <module fileurl="file://$PROJECT_DIR$/shakeText.iml" filepath="$PROJECT_DIR$/shakeText.iml" />
     </modules>
   </component>
