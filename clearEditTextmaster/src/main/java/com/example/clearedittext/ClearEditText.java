@@ -147,12 +147,85 @@ public class ClearEditText extends EditText implements
     	return translateAnimation;
     }
 
-    public void Animation(View view){
+    public void Animation(View view,int counts){
+        //一：
         //ViewPropertyAnimator.animate(view).rotationBy(360).setDuration(1000).setInterpolator(new OvershootInterpolator()); //todo 在1603自定义可以的
 
+        //二：
        /* ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(view, "translationX", 15);
         objectAnimator.setInterpolator(new CycleInterpolator(2));
         objectAnimator.setDuration(500);
         objectAnimator.start();*/
+
+        //三：
+        /*ObjectAnimator valueAnimator= ObjectAnimator.ofFloat(view,"TranslationX",0,30);
+        valueAnimator.setInterpolator(new CycleInterpolator(counts));
+        valueAnimator.start();*/
+
+        // ViewCompat 用法：
+       /* final CycleInterpolator cycleInterpolator = new CycleInterpolator(7);
+        ViewCompat.animate(head_iv).translationX(30).setDuration(1000).setInterpolator(cycleInterpolator)
+                .setListener(new ViewPropertyAnimatorListener() {
+                    @Override
+                    public void onAnimationStart(View view) {
+
+                    }
+
+                    @Override
+                    public void onAnimationEnd(View view) {
+                        Log.d("haha", "ceshi c,,");
+                        head_iv.clearAnimation();
+                    }
+
+                    @Override
+                    public void onAnimationCancel(View view) {
+
+                    }
+                });//设置动画，跟次数*/
+
+
+        /*ViewCompat.animate(view) //实现动画的操作
+                .setDuration(200)
+                .scaleX(0.9f)
+                .scaleY(0.9f)
+                .setInterpolator(new CycleInterpolator())  //差值器，可以选择很多弹性效果
+                .setListener(new ViewPropertyAnimatorListener() {
+                    @Override
+                    public void onAnimationStart(final View view) {
+
+                    }
+                    @Override
+                    public void onAnimationEnd(final View view) {
+                        switch (view.getId()) {
+                            case R.id.btn_horizontal_ntb:
+                                startActivity(      //view的动画结束，跳转页面
+                                        new Intent(MainActivity.this, HorizontalNtbActivity.class)
+                                );
+                                break;
+                            case R.id.btn_horizontal_top_ntb:
+                                startActivity(     //
+                                        new Intent(MainActivity.this, TopHorizontalNtbActivity.class)
+                                );
+                                break;
+                            case R.id.btn_vertical_ntb:
+                                startActivity(
+                                        new Intent(MainActivity.this, VerticalNtbActivity.class)
+                                );
+                                break;
+                            case R.id.btn_samples_ntb:
+                                startActivity(
+                                        new Intent(MainActivity.this, SamplesNtbActivity.class)
+                                );
+                                break;
+                        }
+                    }
+
+                    @Override
+                    public void onAnimationCancel(final View view) {
+
+                    }
+                })
+                .withLayer()  //渲染作用，不加这句话，动画不会动作
+                .start();*/
     }
 }
